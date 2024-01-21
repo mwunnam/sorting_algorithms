@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "sort.h"
 
 /**
@@ -27,18 +28,30 @@ void swap(int *a, int *b)
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
+	bool swapped;
+
 
 	if (array == NULL || size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
+		swapped = false;
+
 		for (j = 0; j < size - 1 - i; j++)
 		{
 			if (array[j] > array[j + 1])
+			{
 				swap(&array[j], &array[j + 1]);
+				swapped = true;
+				print_array(array, size);
+			}
+		}
 
-			print_array(array, size);
+		if (!swapped)
+		{
+			break;
 		}
 	}
+
 }
