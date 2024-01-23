@@ -1,6 +1,12 @@
 #ifndef SORT_H
 #define SORT_H
 
+/**================================================**/
+/** headerfiles **/
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 
 /**================================================**/
 /** STRUCTS **/
